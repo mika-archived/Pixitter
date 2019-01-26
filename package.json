@@ -1,0 +1,35 @@
+{
+    "name": "pixitter",
+    "version": "0.1.0",
+    "main": "bin/index.js",
+    "types": "bin/index.d.ts",
+    "bin": {
+        "pixitter": "bin/pixitter.js"
+    },
+    "scripts": {
+        "build:app": "parcel build src/index.ts --target=node --bundle-node-modules",
+        "build:cdk": "tsc",
+        "watch:app": "parcel watch src/index.ts --target=node --bundle-node-modules",
+        "watch:cdk": "tsc -w",
+        "cdk": "cdk"
+    },
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.17",
+        "@types/node": "^8.9.4",
+        "@types/twitter": "^1.7.0",
+        "aws-cdk": "^0.22.0",
+        "parcel": "^1.11.0",
+        "typescript": "^3.1.2"
+    },
+    "dependencies": {
+        "@aws-cdk/aws-cloudwatch": "^0.22.0",
+        "@aws-cdk/aws-events": "^0.22.0",
+        "@aws-cdk/aws-lambda": "^0.22.0",
+        "@aws-cdk/aws-sns": "^0.22.0",
+        "@aws-cdk/aws-sqs": "^0.22.0",
+        "@aws-cdk/cdk": "^0.22.0",
+        "dayjs": "^1.8.0",
+        "pixela-node": "^0.0.4",
+        "twitter": "^1.7.1"
+    }
+}
