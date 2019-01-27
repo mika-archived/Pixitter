@@ -2,6 +2,8 @@
 
 Lambda Function that plots the number of post in Twitter per day to Pixela.
 
+![](https://pixe.la/v1/users/mika/graphs/twitter)
+
 
 ## Stacks
 
