@@ -1,0 +1,67 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10.9
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/mongo:3.4.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "yarn.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: yarn install --frozen-lockfile
+
+      - save_cache:
+          paths:
+            - ~/.cache/yarn
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Tests
+          command: |
+            yarn run test
+
+      - run:
+          name: Install aws-cli
+          command: |
+            sudo apt update
+            sudo apt install -y awscli
+
+      - run:
+          name: Build
+          command: |
+            yarn run build:app
+            yarn run build:cdk
+
+      - run:
+          name: Configure AWS region
+          command: |
+            aws configure set region ap-northeast-1
+
+      - run:
+          name: Configure AWS credentials
+          command: |
+            echo "aws_access_key_id = ${AWS_ACCESS_KEY_ID}" >> ~/.aws/credentials
+            echo "aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}" >> ~/.aws/credentials
+
+      - deploy:
+          name: Deployment
+          command: |
+            yarn run cdk deploy
