@@ -49,8 +49,12 @@ jobs:
           name: Configure AWS CLI
           command: |
             aws configure set region ap-northeast-1
-            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+
+      - run:
+          name: Configure AWS credentials
+          command: |
+            echo "aws_access_key_id = ${AWS_ACCESS_KEY_ID}" >> ~/.aws/credentials
+            echo "aws_secret_access_key = ${AWS_SECRET_ACCESS_KEY}" >> ~/.aws/credentials
 
       - deploy:
           name: Deployment
