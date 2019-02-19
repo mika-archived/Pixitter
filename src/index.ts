@@ -40,8 +40,8 @@ async function getStatuses(options: Twitter.AccessTokenOptions): Promise<Twitter
 
 export const handler = async (_event: CloudWatchLogsEvent, _context: Context, callback: Callback) => {
   const tokens = [
-    JSON.parse(process.env.TWITTER_ACCESS_TOKENS),
-    JSON.parse(process.env.TWITTER_ACCESS_TOKEN_SECRETS)
+    process.env.TWITTER_ACCESS_TOKENS.split(","),
+    process.env.TWITTER_ACCESS_TOKEN_SECRETS.split(","),
   ];
 
   let [tweets, retweets] = [0, 0];
@@ -51,8 +51,8 @@ export const handler = async (_event: CloudWatchLogsEvent, _context: Context, ca
       const statuses: any[] = <any[]>await getStatuses({
         consumer_key: process.env.TWITTER_CONSUMER_KEY,
         consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-        access_token_key: tokens[0][i],
-        access_token_secret: tokens[1][i]
+        access_token_key: tokens[0][i].trim(),
+        access_token_secret: tokens[1][i].trim()
       });
 
 
