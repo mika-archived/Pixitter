@@ -88,7 +88,7 @@ export const handler = async (_event: CloudWatchLogsEvent, _context: Context, ca
       color: "sora",
       name: "Twitter",
       type: "int",
-      unit: "pots(s)",
+      unit: "post(s)",
       timezone: "Asia/Tokyo"
     } as any);
   }
