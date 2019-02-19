@@ -47,27 +47,32 @@ export const handler = async (_event: CloudWatchLogsEvent, _context: Context, ca
   let [tweets, retweets] = [0, 0];
   const regex = /([0-9]+-[0-9]+)のポスト数：([0-9]+) \(うちRT：([0-9]+)\)/m;
   for (let i = 0; i < tokens[0].length; i++) {
-    const statuses: any[] = <any[]>await getStatuses({
-      consumer_key: process.env.TWITTER_CONSUMER_KEY,
-      consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-      access_token_key: tokens[0][i],
-      access_token_secret: tokens[1][i]
-    });
+    try {
+      const statuses: any[] = <any[]>await getStatuses({
+        consumer_key: process.env.TWITTER_CONSUMER_KEY,
+        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+        access_token_key: tokens[0][i],
+        access_token_secret: tokens[1][i]
+      });
 
-    for (const status of statuses) {
-      if (/ツイ廃あらーと/.test(status.source)) {
-        const match = (status.text as string).match(regex);
-        if (!match) {
-          continue;
-        }
 
-        const [_, date, posts, rts] = match;
-        if (date === dayjs().format("MM-DD")) {
-          tweets += parseInt(posts);
-          retweets += parseInt(rts);
-          break;
+      for (const status of statuses) {
+        if (/ツイ廃あらーと/.test(status.source)) {
+          const match = (status.text as string).match(regex);
+          if (!match) {
+            continue;
+          }
+
+          const [_, date, posts, rts] = match;
+          if (date === dayjs().format("MM-DD")) {
+            tweets += parseInt(posts);
+            retweets += parseInt(rts);
+            break;
+          }
         }
       }
+    } catch (err) {
+      continue;
     }
   }
 
