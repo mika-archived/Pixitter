@@ -72,6 +72,7 @@ export const handler = async (_event: CloudWatchLogsEvent, _context: Context, ca
         }
       }
     } catch (err) {
+      console.error(err);
       continue;
     }
   }
