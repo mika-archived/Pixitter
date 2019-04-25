@@ -7,10 +7,8 @@
         "pixitter": "bin/pixitter.js"
     },
     "scripts": {
-        "build:app": "parcel build src/index.ts --target=node --bundle-node-modules",
-        "build:cdk": "tsc",
-        "watch:app": "parcel watch src/index.ts --target=node --bundle-node-modules",
-        "watch:cdk": "tsc -w",
+        "build": "parcel build src/index.ts --target=node --bundle-node-modules",
+        "watch": "parcel watch src/index.ts --target=node --bundle-node-modules",
         "cdk": "cdk"
     },
     "devDependencies": {
@@ -19,6 +17,7 @@
         "@types/twitter": "^1.7.0",
         "aws-cdk": "^0.22.0",
         "parcel": "^1.11.0",
+        "ts-node": "^8.1.0",
         "typescript": "^3.1.2"
     },
     "dependencies": {
