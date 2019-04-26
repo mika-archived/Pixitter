@@ -18,7 +18,7 @@
         "aws-cdk": "0.22.0",
         "parcel": "1.12.3",
         "ts-node": "8.1.0",
-        "typescript": "3.2.4"
+        "typescript": "3.4.5"
     },
     "dependencies": {
         "@aws-cdk/aws-cloudwatch": "^0.22.0",
