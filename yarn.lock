@@ -932,9 +932,9 @@
     rimraf "^2.6.2"
 
 "@parcel/logger@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@parcel/logger/-/logger-1.11.0.tgz#91f39da14ba08dd85db247145698c62102960abb"
-  integrity sha512-lIRfDg+junbFUUeU0QtHX00gKCgEsYHZydFKwrJ8dc0D+WE2SYT1FcVCgpPAfKYgtg0QQMns8E9vzT9UjH92PQ==
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@parcel/logger/-/logger-1.11.1.tgz#c55b0744bcbe84ebc291155627f0ec406a23e2e6"
+  integrity sha512-9NF3M6UVeP2udOBDILuoEHd8VrF4vQqoWHEafymO1pfSoOMfxrSJZw1MfyAAIUN/IFp9qjcpDCUbDZB+ioVevA==
   dependencies:
     "@parcel/workers" "^1.11.0"
     chalk "^2.1.0"
@@ -948,12 +948,12 @@
   integrity sha512-cA3p4jTlaMeOtAKR/6AadanOPvKeg8VwgnHhOyfi0yClD0TZS/hi9xu12w4EzA/8NtHu0g6o4RDfcNjqN8l1AQ==
 
 "@parcel/watcher@^1.12.0":
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/@parcel/watcher/-/watcher-1.12.0.tgz#769024b2a810b0c3b38c310f297d104c77df3660"
-  integrity sha512-yijGiAqG7Tjf5WnFwOkiNWwerfZQDNABldiiqRDtr7vDWLO+F/DIncyB7tTcaD5Loevrr5mzzGo8Ntf3d2GIPg==
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/@parcel/watcher/-/watcher-1.12.1.tgz#b98b3df309fcab93451b5583fc38e40826696dad"
+  integrity sha512-od+uCtCxC/KoNQAIE1vWx1YTyKYY+7CTrxBJPRh3cDWw/C0tCtlBMVlrbplscGoEpt6B27KhJDCv82PBxOERNA==
   dependencies:
     "@parcel/utils" "^1.11.0"
-    chokidar "^2.0.3"
+    chokidar "^2.1.5"
 
 "@parcel/workers@^1.11.0":
   version "1.11.0"
@@ -1684,7 +1684,7 @@ charenc@~0.0.1:
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
   integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
 
-chokidar@^2.0.3:
+chokidar@^2.1.5:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.8.tgz#804b3a7b6a99358c3c5c61e71d8728f041cff917"
   integrity sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==
