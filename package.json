@@ -13,7 +13,7 @@
     },
     "devDependencies": {
         "@types/aws-lambda": "8.10.33",
-        "@types/node": "8.10.55",
+        "@types/node": "8.10.56",
         "@types/twitter": "1.7.0",
         "aws-cdk": "0.22.0",
         "parcel": "1.12.4",
