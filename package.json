@@ -12,7 +12,7 @@
         "cdk": "cdk"
     },
     "devDependencies": {
-        "@types/aws-lambda": "8.10.43",
+        "@types/aws-lambda": "8.10.44",
         "@types/node": "8.10.59",
         "@types/twitter": "1.7.0",
         "aws-cdk": "0.22.0",
